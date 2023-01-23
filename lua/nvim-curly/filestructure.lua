@@ -2,7 +2,7 @@ local M = {}
 
 -- Gets filetype
 function M.get_filetype()
-    return vim.g.nvim_curly_filetype or 'json'
+  return vim.g.nvim_curly_filetype or "json"
 end
 
 -- Gets workspace location
@@ -12,17 +12,17 @@ end
 
 -- Resolves filename
 function M.get_filename()
-  return "history/"..os.date("%d-%m-%y_%H:%M:%S").."."..M.get_filetype()
+  return "history/" .. os.date("%d-%m-%y_%H:%M:%S") .. "." .. M.get_filetype()
 end
 
 -- Navigate to the root of the workspace
 function M.go_to_workspace_root()
-    vim.cmd(":e "..M.get_workspace())
+  vim.cmd(":e " .. M.get_workspace())
 end
 
 -- Navigate to the history
 function M.go_to_history()
-    vim.cmd(":e "..M.get_workspace().."history/")
+  vim.cmd(":e " .. M.get_workspace() .. "history/")
 end
 
 function M.go_to_workspace_root()

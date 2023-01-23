@@ -10,7 +10,6 @@ local open_split = function(filename)
   vim.api.nvim_buf_set_option(0, "modifiable", true)
 end
 
-
 -- Opens window in vertical split
 local open_vsplit = function(filename)
   vim.cmd("vsplit " .. Filestructure.get_workspace() .. filename)
@@ -29,13 +28,13 @@ local open_float = function(filename)
   local col = math.ceil((width - win_width) / 2)
 
   local opts = {
-      style = "minimal",
-      relative = "editor",
-      width = win_width,
-      height = win_height,
-      row = row,
-      col = col,
-      border = "rounded",
+    style = "minimal",
+    relative = "editor",
+    width = win_width,
+    height = win_height,
+    row = row,
+    col = col,
+    border = "rounded",
   }
 
   local buf = vim.api.nvim_create_buf(false, true)
@@ -50,9 +49,9 @@ end
 
 -- A table of allowed window types
 local window_types = {}
-  window_types["vertical"] = open_vsplit
-  window_types["horizontal"] = open_split
-  window_types["float"] = open_float
+window_types["vertical"] = open_vsplit
+window_types["horizontal"] = open_split
+window_types["float"] = open_float
 
 -- Gets window type. Available variants: `vertical`, `horizontal`, `float`.
 -- Default is `vertical`.
@@ -62,14 +61,14 @@ end
 
 -- Opens window
 function M.open_win(filename)
-    local window_func = window_types[get_window_type()]
+  local window_func = window_types[get_window_type()]
 
-    if window_func ~= nil then
-        window_func(filename)
-        return
-    end
+  if window_func ~= nil then
+    window_func(filename)
+    return
+  end
 
-    open_vsplit(filename)
+  open_vsplit(filename)
 end
 
 return M

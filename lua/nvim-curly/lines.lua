@@ -16,8 +16,8 @@ function M.parse_multiline()
   local line_start = vstart[2]
   local line_end = vend[2]
 
-  local lines = vim.fn.getline(line_start,line_end)
-  return table.concat(lines, ' ')
+  local lines = vim.fn.getline(line_start, line_end)
+  return table.concat(lines, " ")
 end
 
 return M
