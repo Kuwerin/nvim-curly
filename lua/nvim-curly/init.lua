@@ -1,14 +1,14 @@
 -- Neovim query executor for cURL-like utilities
 
-local LineParser = require("nvim-curly.lines")
-local Filestructure = require("nvim-curly.filestructure")
-local WindowFactory = require("nvim-curly.window")
+local LineParser = require('nvim-curly.lines')
+local Filestructure = require('nvim-curly.filestructure')
+local WindowFactory = require('nvim-curly.window')
 
 local M = {}
 
 -- Executes the command and writes output to the file
 local execute_to_file = function(cmd, filename)
-  vim.cmd("!" .. cmd .. "  > " .. Filestructure.get_workspace() .. filename)
+  vim.cmd('!' .. cmd .. '  > ' .. Filestructure.get_workspace() .. filename)
 end
 
 function M.execute_line()
