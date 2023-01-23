@@ -26,4 +26,12 @@ function M.execute_multiline()
     WindowFactory.open_win(filename)
 end
 
+function M.go_to_workspace_root()
+    Filestructure.go_to_workspace_root()
+end
+
+function M.go_to_history()
+    Filestructure.go_to_history()
+end
+
 return M
