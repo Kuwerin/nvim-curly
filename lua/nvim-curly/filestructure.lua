@@ -24,13 +24,4 @@ end
 function M.go_to_history()
   vim.cmd(':e ' .. M.get_workspace() .. 'history/')
 end
-
-function M.go_to_workspace_root()
-  vim.cmd(':e ' .. M.get_workspace())
-end
-
-function M.go_to_history()
-  vim.cmd(':e ' .. M.get_workspace() .. 'history/')
-end
-
 return M
