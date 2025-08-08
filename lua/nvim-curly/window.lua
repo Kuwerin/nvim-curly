@@ -1,16 +1,16 @@
--- Vim window API intercommunication
+-- Vim window API intercommunication.
 
 local Filestructure = require('nvim-curly.filestructure')
 
 local M = {}
 
--- Opens window in horisontal split
+-- Opens window in horisontal split.
 local open_split = function(filename)
   vim.cmd('split ' .. Filestructure.get_workspace() .. filename)
   vim.api.nvim_buf_set_option(0, 'modifiable', true)
 end
 
--- Opens window in vertical split
+-- Opens window in vertical split.
 local open_vsplit = function(filename)
   vim.cmd('vsplit ' .. Filestructure.get_workspace() .. filename)
   vim.api.nvim_buf_set_option(0, 'modifiable', true)
@@ -59,7 +59,7 @@ local get_window_type = function()
   return vim.g.nvim_curly_window_type or 'vertical'
 end
 
--- Opens window
+-- Opens window.
 function M.open_win(filename)
   local window_func = window_types[get_window_type()]
 
