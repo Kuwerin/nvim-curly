@@ -36,4 +36,33 @@ end)
 
 ```
 
-## Usage
+
+## Functions
+
+### `execute_line`
+
+This method gets the whole line under the cursor to executes it. Works good with `NORMAL` mode.
+
+```lua
+nnoremap("<S-r>", ":lua require('nvim-curly').execute_line()<CR>", silent)
+```
+![gif](assets/2.gif)
+
+
+### `execute_multiline`
+
+This method gets the selected portion and executes it. Works good with `VISUAL AND SELECT` and `VISUAL ONLY` modes.
+
+```lua
+xnoremap("<S-r>", ":lua require('nvim-curly').execute_multiline()<CR>", silent)
+vnoremap("<S-r>", ":lua require('nvim-curly').execute_multiline()<CR>", silent)
+```
+![gif](assets/3.gif)
+
+### `go_to_history`
+
+(WIP!) Changes the location context of the editor to the Nvim-culry history dir.
+
+### `go_to_workspace_root`
+
+(WIP!) Changes the location context of the editor to the Nvim-culry workspace root.
